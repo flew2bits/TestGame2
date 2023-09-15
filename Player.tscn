@@ -34,3 +34,13 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ReticleHolder/Reticle/Area2D"]
 shape = SubResource("CircleShape2D_v2vqm")
+
+[node name="ToolName" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+offset_bottom = -8.0
+theme_override_font_sizes/font_size = 11
+text = "none"
+horizontal_alignment = 1
+vertical_alignment = 1

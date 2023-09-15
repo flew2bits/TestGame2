@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqicju44dxqlp"]
+
+[ext_resource type="Script" path="res://garden_plot.gd" id="1_gxdu3"]
+[ext_resource type="Texture2D" uid="uid://f64gkrsxbtss" path="res://Tiles/Dungeon/tile_0000.png" id="2_hnury"]
+[ext_resource type="Texture2D" uid="uid://bmjl1vqc48fbd" path="res://Tiles/Dungeon/tile_0049.png" id="3_xuc3q"]
+[ext_resource type="Texture2D" uid="uid://bn4yfkxfeylql" path="res://Tiles/Dungeon/tile_0060.png" id="4_0kl15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74osp"]
+size = Vector2(12, 12)
+
+[node name="GardenPlot" type="Node2D"]
+script = ExtResource("1_gxdu3")
+tilledTexture = ExtResource("2_hnury")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_xuc3q")
+
+[node name="Activated" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_0kl15")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_74osp")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

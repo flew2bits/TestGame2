@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://8qcdgjeg3wnt"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_fgv4q"]
+[ext_resource type="Texture2D" uid="uid://b16i631raurt7" path="res://Tiles/Dungeon/tile_0085.png" id="1_g2ob3"]
+[ext_resource type="Texture2D" uid="uid://cyyw0i5y7rqv3" path="res://Tiles/Dungeon/tile_0101.png" id="3_7kmt3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bcep"]
+size = Vector2(8, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2vqm"]
+radius = 2.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(216, 96)
+script = ExtResource("1_fgv4q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_0bcep")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_g2ob3")
+
+[node name="ReticleHolder" type="Node2D" parent="."]
+
+[node name="Reticle" type="Sprite2D" parent="ReticleHolder"]
+position = Vector2(16, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_7kmt3")
+
+[node name="Area2D" type="Area2D" parent="ReticleHolder/Reticle"]
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReticleHolder/Reticle/Area2D"]
+shape = SubResource("CircleShape2D_v2vqm")

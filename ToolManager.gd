@@ -23,12 +23,15 @@ func _input(inputEvent):
 	elif Input.is_action_just_released("tool_right"):
 		tool_selected.emit(Tool.EAST)
 	elif Input.is_action_just_pressed("tool_down"):
+		print("tool_down pressed")
+		south_tool_held_triggered = false
+		timer.wait_time = 0.5
 		timer.start()
 	elif Input.is_action_just_released("tool_down"):
+		print("tool_down released")
 		if not timer.is_stopped() and not south_tool_held_triggered:
 			tool_selected.emit(Tool.SOUTH)
 			timer.stop()
-		south_tool_held_triggered = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

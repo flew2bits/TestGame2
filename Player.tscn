@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://8qcdgjeg3wnt"]
+[gd_scene load_steps=7 format=3 uid="uid://8qcdgjeg3wnt"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_fgv4q"]
 [ext_resource type="Texture2D" uid="uid://b16i631raurt7" path="res://Tiles/Dungeon/tile_0085.png" id="1_g2ob3"]
 [ext_resource type="Texture2D" uid="uid://kh7xhgoim4fr" path="res://Tiles/reticle.png" id="3_kexvg"]
+[ext_resource type="Texture2D" uid="uid://bn4yfkxfeylql" path="res://Tiles/Dungeon/tile_0060.png" id="3_yjkqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bcep"]
 size = Vector2(8, 6)
@@ -27,11 +28,11 @@ texture = ExtResource("1_g2ob3")
 position = Vector2(16, 0)
 texture = ExtResource("3_kexvg")
 
-[node name="Area2D" type="Area2D" parent="ReticleHolder/Reticle"]
-collision_layer = 256
-collision_mask = 0
+[node name="ReticleTarget" type="Area2D" parent="ReticleHolder/Reticle"]
+collision_layer = 0
+collision_mask = 512
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ReticleHolder/Reticle/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReticleHolder/Reticle/ReticleTarget"]
 shape = SubResource("CircleShape2D_v2vqm")
 
 [node name="ToolName" type="Label" parent="."]
@@ -43,3 +44,12 @@ theme_override_font_sizes/font_size = 11
 text = "none"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ActivationTargetHolder" type="Node" parent="."]
+
+[node name="ActivationTarget" type="Sprite2D" parent="ActivationTargetHolder"]
+visible = false
+texture = ExtResource("3_yjkqm")
+
+[connection signal="area_entered" from="ReticleHolder/Reticle/ReticleTarget" to="." method="_on_reticle_target_area_entered"]
+[connection signal="area_exited" from="ReticleHolder/Reticle/ReticleTarget" to="." method="_on_reticle_target_area_exited"]

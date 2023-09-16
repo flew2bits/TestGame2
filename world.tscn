@@ -938,55 +938,35 @@ layer_1/tile_data = PackedInt32Array(655376, 393217, 1, 589841, 458753, 0, 65537
 script = ExtResource("3_ssn52")
 
 [node name="GardenPlot" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(160, 96)
+position = Vector2(168, 104)
 
 [node name="GardenPlot2" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(144, 96)
+position = Vector2(152, 104)
 
 [node name="GardenPlot3" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(128, 96)
+position = Vector2(136, 104)
 
 [node name="GardenPlot4" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(128, 112)
+position = Vector2(136, 120)
 
 [node name="GardenPlot5" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(144, 112)
+position = Vector2(152, 120)
 
 [node name="GardenPlot6" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(160, 112)
+position = Vector2(168, 120)
 
 [node name="GardenPlot7" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(128, 128)
+position = Vector2(136, 136)
 
 [node name="GardenPlot8" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(144, 128)
+position = Vector2(152, 136)
 
 [node name="GardenPlot9" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(160, 128)
+position = Vector2(168, 136)
 
-[node name="GardenPlot10" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(128, 144)
-
-[node name="GardenPlot11" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(144, 144)
-
-[node name="GardenPlot12" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(160, 144)
-
-[node name="GardenPlot13" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(176, 96)
-
-[node name="GardenPlot14" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(176, 112)
-
-[node name="GardenPlot15" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(176, 128)
-
-[node name="GardenPlot16" parent="Garden" instance=ExtResource("4_rfgep")]
-position = Vector2(176, 144)
-
-[node name="Player" parent="." instance=ExtResource("3_dlpk7")]
+[node name="Player" parent="." node_paths=PackedStringArray("tileMap") instance=ExtResource("3_dlpk7")]
 position = Vector2(248, 104)
+tileMap = NodePath("../TileMap")
 
 [node name="CameraFollower" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")

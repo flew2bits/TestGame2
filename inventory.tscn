@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtfyn6t3bvlaj"]
+
+[ext_resource type="Texture2D" uid="uid://behgkoos7tcve" path="res://Tiles/inventory-9-patch.png" id="1_k150t"]
+[ext_resource type="Script" path="res://InventoryManager.gd" id="1_ql3x5"]
+
+[node name="Inventory" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ql3x5")
+
+[node name="InventoryMain" type="MarginContainer" parent="."]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 30
+
+[node name="NinePatchRect" type="NinePatchRect" parent="InventoryMain"]
+layout_mode = 2
+texture = ExtResource("1_k150t")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryMain/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="Label" type="Label" parent="InventoryMain/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.6, 0.372549, 0.172549, 1)
+theme_override_font_sizes/font_size = 8
+text = "Inventory"

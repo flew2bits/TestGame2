@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctcoerd08p40a"]
+[gd_scene load_steps=13 format=3 uid="uid://ctcoerd08p40a"]
 
 [ext_resource type="Texture2D" uid="uid://cv8fuhtqvk82j" path="res://Tilemaps/dungeon.png" id="1_mhgwp"]
 [ext_resource type="Texture2D" uid="uid://cq60tvi65xnve" path="res://Tilemaps/town.png" id="2_ro834"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://garden_plot.gd" id="3_ssn52"]
 [ext_resource type="PackedScene" uid="uid://dqicju44dxqlp" path="res://garden_plot.tscn" id="4_rfgep"]
 [ext_resource type="Shader" path="res://outline.gdshader" id="5_bok32"]
+[ext_resource type="PackedScene" uid="uid://bbckuabdpupwp" path="res://WorldObjects/tree1.tscn" id="7_auref"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mfjj3"]
 tile_data = PackedInt32Array(65536, 393217, 1, 1, 458753, 0, 65537, 458753, 1, 131073, 458753, 2, 65538, 524289, 1)
@@ -921,6 +922,7 @@ shader_parameter/line_color = Color(1, 0.901961, 0.160784, 1)
 shader_parameter/width = 1.0
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_87ehl")
@@ -998,3 +1000,25 @@ position_smoothing_enabled = true
 [node name="Node2D" type="Node2D" parent="."]
 material = SubResource("ShaderMaterial_lmyyq")
 position = Vector2(72, 72)
+
+[node name="Tree1" parent="." instance=ExtResource("7_auref")]
+position = Vector2(245, 239)
+
+[node name="Dialogue" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Dialogue"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "I Need Text"

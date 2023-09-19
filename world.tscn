@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctcoerd08p40a"]
+[gd_scene load_steps=15 format=3 uid="uid://ctcoerd08p40a"]
 
 [ext_resource type="Texture2D" uid="uid://cv8fuhtqvk82j" path="res://Tilemaps/dungeon.png" id="1_mhgwp"]
 [ext_resource type="Texture2D" uid="uid://cq60tvi65xnve" path="res://Tilemaps/town.png" id="2_ro834"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://garden_plot.gd" id="3_ssn52"]
 [ext_resource type="PackedScene" uid="uid://dqicju44dxqlp" path="res://garden_plot.tscn" id="4_rfgep"]
 [ext_resource type="Shader" path="res://outline.gdshader" id="5_bok32"]
+[ext_resource type="Texture2D" uid="uid://b2jp0xe5kbhwr" path="res://Sprites/1476714973-bowie-and-toby.jpg" id="7_uciif"]
+[ext_resource type="Texture2D" uid="uid://cdmdgkpyjtp17" path="res://icon.svg" id="7_vgxad"]
+[ext_resource type="Texture2D" uid="uid://bt6oxksua03sp" path="res://Sprites/4a28cbc46930fd8589822a0e362cfb36.jpg" id="8_qi3q8"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mfjj3"]
 tile_data = PackedInt32Array(65536, 393217, 1, 1, 458753, 0, 65537, 458753, 1, 131073, 458753, 2, 65538, 524289, 1)
@@ -1001,17 +1004,60 @@ position = Vector2(72, 72)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterLeft" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -501.0
+offset_top = -455.0
+offset_right = -191.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_uciif")
+expand_mode = 1
+
+[node name="CharacterRight" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 182.0
+offset_top = -442.0
+offset_right = 492.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_qi3q8")
+expand_mode = 1
+flip_h = true
+
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -521.0
-offset_top = -249.0
-offset_right = 529.0
+offset_left = -376.0
+offset_top = -278.0
+offset_right = 374.0
+offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_vertical = 8
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
@@ -1041,6 +1087,21 @@ text = "Bowie Hargett-Taylor"
 layout_mode = 2
 size_flags_vertical = 3
 text = "How are you?"
+
+[node name="BodyIndicator" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/Body"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("7_vgxad")
+expand_mode = 5
+stretch_mode = 5
 
 [node name="ChoicesHolder" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

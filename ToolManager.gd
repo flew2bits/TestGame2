@@ -16,18 +16,21 @@ func _ready():
 
 
 func _input(inputEvent):
-	if Input.is_action_just_released("tool_up"):
+	if inputEvent.is_action_released("tool_up"):
 		tool_selected.emit(Tool.NORTH)
-	elif Input.is_action_just_released("tool_left"):
+	elif inputEvent.is_action_released("tool_left"):
 		tool_selected.emit(Tool.WEST)
-	elif Input.is_action_just_released("tool_right"):
+	elif inputEvent.is_action_released("tool_right"):
 		tool_selected.emit(Tool.EAST)
-	elif Input.is_action_just_pressed("tool_down"):
+	elif inputEvent.is_action_pressed("tool_down"):
 		print("tool_down pressed")
 		south_tool_held_triggered = false
-		timer.wait_time = 0.5
-		timer.start()
-	elif Input.is_action_just_released("tool_down"):
+		timer.start(0.5)
+		await timer.timeout
+		if not Input.is_action_pressed("tool_down"): return
+		south_tool_held.emit()
+		south_tool_held_triggered = true
+	elif inputEvent.is_action_released("tool_down"):
 		print("tool_down released")
 		if not timer.is_stopped() and not south_tool_held_triggered:
 			tool_selected.emit(Tool.SOUTH)
@@ -38,7 +41,7 @@ func _process(delta):
 	pass
 
 
-
-func _on_timer_timeout():
-	south_tool_held.emit()
-	south_tool_held_triggered = true
+#
+#func _on_timer_timeout():
+#	south_tool_held.emit()
+#	south_tool_held_triggered = true

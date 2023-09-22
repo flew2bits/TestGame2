@@ -1,0 +1,15 @@
+Join GoblinKing 0
+Join Sarah 8 [ mirrored="true"]
+GoblinKing: You remind me of the babe
+- What babe?
+	GoblinKing: The babe with the power
+	- What power?
+		GoblinKing: The power of voodoo
+		- Who do?
+			GoblinKing: You do
+			- Do what?
+				GoblinKing: Remind me of the babe
+				[end_timeline]
+GoblinKing: (Dance, magic dance) Dance, magic dance\
+(Dance, magic dance) Dance, magic dance
+[end_timeline]

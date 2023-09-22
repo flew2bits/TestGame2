@@ -21,6 +21,7 @@ TimeManager="*res://Scripts/Managers/TimeManager.gd"
 ToolManager="*res://tool_manager.tscn"
 Inventory="*res://inventory.tscn"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogic]
 
@@ -52,7 +53,7 @@ project/assembly_name="TestGame2"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 

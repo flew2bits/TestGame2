@@ -1,5 +1,5 @@
-Join GoblinKing 0
-Join Sarah 8 [ mirrored="true"]
+Join Sarah 4 [ mirrored="true"]
+Join GoblinKing 1
 GoblinKing: You remind me of the babe
 - What babe?
 	GoblinKing: The babe with the power
@@ -12,4 +12,5 @@ GoblinKing: You remind me of the babe
 				[end_timeline]
 GoblinKing: (Dance, magic dance) Dance, magic dance\
 (Dance, magic dance) Dance, magic dance
+[wait_input hide_text="false"]
 [end_timeline]

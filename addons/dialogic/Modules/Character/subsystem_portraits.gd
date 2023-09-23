@@ -539,8 +539,8 @@ func change_speaker(speaker:DialogicCharacter= null, portrait:= ""):
 			continue
 		
 		_change_portrait_mirror(con.get_child(0))
-	
-	if speaker != dialogic.current_state_info['character']:
+		
+	if typeof(speaker) == TYPE_STRING && speaker != dialogic.current_state_info['character']:
 		if dialogic.current_state_info['character'] and is_character_joined(load(dialogic.current_state_info['character'])):
 			dialogic.current_state_info['portraits'][dialogic.current_state_info['character']].node.get_child(0)._unhighlight()
 		if speaker and is_character_joined(speaker):

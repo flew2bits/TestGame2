@@ -1,0 +1,34 @@
+[background path="res://assets/backgroudns/dialogic_factory.png"]
+
+Join GoblinKing 4
+GoblinKing : Hello and welcome to Wait? What is this?
+
+Join Sarah  1
+Sarah: Well, this is is the example timeline.
+
+GoblinKing: I thought this was a cool new feature?
+
+Sarah: Nah, sorry.
+
+GoblinKing: It's okay.
+
+# Some choices jump back to this
+label WhatAbout
+
+GoblinKing (default): So what should this example be about?
+- How to bake cookies
+    Sarah: Wait that hasn't to do with dialogic?!
+    jump WhatAbout
+
+- How to reach the moon
+    GoblinKing : NASA! It's you again. This is for making dialogs!\
+    Please ask someone else about the moon!.
+    
+    jump WhatAbout
+
+- How to write timelines in text format
+    GoblinKing: Oh, well it's pretty intuitive.[pause= 0.2]I hope.
+    
+    Sarah: Let's hope it's easy as well.
+
+[end_timeline]

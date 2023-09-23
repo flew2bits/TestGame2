@@ -1,15 +1,15 @@
 Join Sarah 4 [ mirrored="true"]
 Join GoblinKing 1
 GoblinKing: You remind me of the babe
-- What babe?
-	GoblinKing: The babe with the power
-	- What power?
-		GoblinKing: The power of voodoo
-		- Who do?
-			GoblinKing: You do
-			- Do what?
-				GoblinKing: Remind me of the babe
-				[end_timeline]
+- What babe? [if {} == ""]
+GoblinKing: The babe with the power
+- What power?
+GoblinKing: The power of voodoo
+- Who do?
+GoblinKing: You do
+- Do what?
+GoblinKing: Remind me of the babe
+\[end]
 GoblinKing: (Dance, magic dance) Dance, magic dance\
 (Dance, magic dance) Dance, magic dance
 [wait_input hide_text="false"]

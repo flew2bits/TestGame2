@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 80.0
 const ACCELERATION = 200.0
-const FRICTION = 500.0
+const FRICTION = 800.0
 
 @onready var reticleHolder = $ReticleHolder
 @onready var reticle = $ReticleHolder/Reticle
@@ -34,7 +34,7 @@ func _physics_process(delta):
 	if direction:
 		velocity = velocity.move_toward(direction * SPEED, delta * ACCELERATION)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, delta * ACCELERATION)
+		velocity = velocity.move_toward(Vector2.ZERO, delta * FRICTION)
 
 	if direction.length_squared() > 0:
 		reticleHolder.rotation = direction.angle()

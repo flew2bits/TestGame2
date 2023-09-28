@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctcoerd08p40a"]
+[gd_scene load_steps=13 format=3 uid="uid://ctcoerd08p40a"]
 
 [ext_resource type="Texture2D" uid="uid://cv8fuhtqvk82j" path="res://Tilemaps/dungeon.png" id="1_mhgwp"]
 [ext_resource type="Texture2D" uid="uid://cq60tvi65xnve" path="res://Tilemaps/town.png" id="2_ro834"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://garden_plot.gd" id="3_ssn52"]
 [ext_resource type="PackedScene" uid="uid://dqicju44dxqlp" path="res://garden_plot.tscn" id="4_rfgep"]
 [ext_resource type="Shader" path="res://outline.gdshader" id="5_bok32"]
+[ext_resource type="PackedScene" uid="uid://f2btq0oca0tq" path="res://actor.tscn" id="7_gavbs"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mfjj3"]
 tile_data = PackedInt32Array(65536, 393217, 1, 1, 458753, 0, 65537, 458753, 1, 131073, 458753, 2, 65538, 524289, 1)
@@ -995,8 +996,10 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(248, 104)
-zoom = Vector2(2, 2)
 
 [node name="Node2D" type="Node2D" parent="."]
 material = SubResource("ShaderMaterial_lmyyq")
 position = Vector2(72, 72)
+
+[node name="Actor" parent="." instance=ExtResource("7_gavbs")]
+position = Vector2(289, 58)

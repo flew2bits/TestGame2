@@ -32,7 +32,6 @@ dialogues_selected_dialogue="ade89692-0b62-47dd-bacf-2b835ca69902"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/resizable=false
-window/stretch/scale=4.0
 
 [dotnet]
 

@@ -935,6 +935,7 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(655376, 393217, 1, 589841, 458753, 0, 655377, 458753, 1, 720913, 458753, 2, 655378, 524289, 1, 393235, 393217, 1, 327700, 458753, 0, 393236, 458753, 1, 458772, 458753, 2, 393237, 524289, 1, 196620, 393217, 1, 131085, 458753, 0, 196621, 458753, 1, 262157, 458753, 2, 196622, 524289, 1)
 
 [node name="Garden" type="Node2D" parent="."]
+y_sort_enabled = true
 script = ExtResource("3_ssn52")
 
 [node name="GardenPlot" parent="Garden" instance=ExtResource("4_rfgep")]
@@ -986,6 +987,7 @@ position = Vector2(176, 128)
 position = Vector2(176, 144)
 
 [node name="Player" parent="." instance=ExtResource("3_dlpk7")]
+y_sort_enabled = true
 position = Vector2(248, 104)
 
 [node name="CameraFollower" type="RemoteTransform2D" parent="Player"]

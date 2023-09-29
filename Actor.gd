@@ -1,14 +1,11 @@
 extends CharacterBody2D
 
 @onready var sprite = $Sprite
-@onready var startingMaterial = sprite.get_material()
-const highlightMaterial = "res://outline.gdshader"
+@onready var startingMaterial =  sprite.get_material()
+@onready var highlightMaterial = preload("res://MaterialsShaders/outlineMaterial.tres")
 
-
-func _on_area_2d_area_entered(area):
+func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	sprite.set_material(highlightMaterial)
-	print("hi");
 
-func _on_area_2d_area_exited(area):
+func _on_area_2d_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
 	sprite.set_material(startingMaterial)
-	print("bye)

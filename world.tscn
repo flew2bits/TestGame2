@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://8qcdgjeg3wnt" path="res://Player.tscn" id="3_dlpk7"]
 [ext_resource type="Script" path="res://garden_plot.gd" id="3_ssn52"]
 [ext_resource type="PackedScene" uid="uid://dqicju44dxqlp" path="res://garden_plot.tscn" id="4_rfgep"]
-[ext_resource type="Shader" path="res://outline.gdshader" id="5_bok32"]
-[ext_resource type="PackedScene" uid="uid://f2btq0oca0tq" path="res://actor.tscn" id="7_gavbs"]
+[ext_resource type="Shader" path="res://MaterialsShaders/outline.gdshader" id="6_m0niu"]
+[ext_resource type="PackedScene" uid="uid://bywj8gkux7748" path="res://actor.tscn" id="7_gavbs"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mfjj3"]
 tile_data = PackedInt32Array(65536, 393217, 1, 1, 458753, 0, 65537, 458753, 1, 131073, 458753, 2, 65538, 524289, 1)
@@ -917,7 +917,7 @@ sources/1 = SubResource("TileSetAtlasSource_sb8hb")
 pattern_0 = SubResource("TileMapPattern_mfjj3")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lmyyq"]
-shader = ExtResource("5_bok32")
+shader = ExtResource("6_m0niu")
 shader_parameter/line_color = Color(1, 0.901961, 0.160784, 1)
 shader_parameter/width = 1.0
 
@@ -987,19 +987,22 @@ position = Vector2(176, 128)
 [node name="GardenPlot16" parent="Garden" instance=ExtResource("4_rfgep")]
 position = Vector2(176, 144)
 
-[node name="Player" parent="." instance=ExtResource("3_dlpk7")]
-y_sort_enabled = true
-position = Vector2(248, 104)
-
-[node name="CameraFollower" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(248, 104)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="YSort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="YSort" instance=ExtResource("3_dlpk7")]
+y_sort_enabled = true
+position = Vector2(248, 104)
+
+[node name="CameraFollower" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
+
+[node name="Node2D" type="Node2D" parent="YSort"]
 material = SubResource("ShaderMaterial_lmyyq")
 position = Vector2(72, 72)
 
-[node name="Actor" parent="." instance=ExtResource("7_gavbs")]
+[node name="Actor" parent="YSort" instance=ExtResource("7_gavbs")]
 position = Vector2(289, 58)

@@ -329,7 +329,6 @@ texture = ExtResource("3_68do5")
 flip_h = true
 hframes = 8
 vframes = 4
-frame = 24
 
 [node name="Clothes" type="Sprite2D" parent="Sprites"]
 

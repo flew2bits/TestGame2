@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dmio5jlnv52qw"]
+[gd_scene load_steps=51 format=3 uid="uid://dmio5jlnv52qw"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_0n62b"]
 [ext_resource type="Texture2D" uid="uid://b16i631raurt7" path="res://Tiles/Dungeon/tile_0085.png" id="2_knqko"]
@@ -7,6 +7,19 @@
 [ext_resource type="Texture2D" uid="uid://b8wdna13puvre" path="res://Sprites/GoblinRunAnimations/NewGoblin/BodyWithCutOffArms.png" id="5_0a3sf"]
 [ext_resource type="Texture2D" uid="uid://d0gau6khgmva5" path="res://Sprites/GoblinRunAnimations/NewGoblin/Eyes/eyes-narrow.png" id="5_hg8fp"]
 [ext_resource type="Texture2D" uid="uid://dii6vvvxxgctk" path="res://Sprites/GoblinRunAnimations/NewGoblin/Eyes/eyes-open.png" id="6_na704"]
+[ext_resource type="Texture2D" uid="uid://bjy2hen5o15du" path="res://Sprites/GoblinRunAnimations/NewGoblin/Noses/nose1.png" id="8_8kcav"]
+[ext_resource type="Texture2D" uid="uid://dserk046un0id" path="res://Sprites/GoblinRunAnimations/NewGoblin/Mouthes/mouth-frown.png" id="8_45map"]
+[ext_resource type="Texture2D" uid="uid://cq3xi7jpw5bfy" path="res://Sprites/GoblinRunAnimations/NewGoblin/Mouthes/mouth-o.png" id="9_3iktf"]
+[ext_resource type="Texture2D" uid="uid://0c41jsw0u4l4" path="res://Sprites/GoblinRunAnimations/NewGoblin/Mouthes/mouth-teeth.png" id="10_djbt1"]
+[ext_resource type="Texture2D" uid="uid://co1361p3ynn0j" path="res://Sprites/GoblinRunAnimations/NewGoblin/Mouthes/mouth-teethySmile.png" id="11_bem4q"]
+[ext_resource type="Texture2D" uid="uid://ucipw5dt0h8" path="res://Sprites/GoblinRunAnimations/NewGoblin/Mouthes/mouth-tongueOut.png" id="12_rye0i"]
+[ext_resource type="Texture2D" uid="uid://csp1i3lmhhnnm" path="res://Sprites/GoblinRunAnimations/NewGoblin/Mouthes/mouth-smile.png" id="13_2t1br"]
+[ext_resource type="Texture2D" uid="uid://mwissgniw5r7" path="res://Sprites/icon-arm.png" id="14_vm5s2"]
+[ext_resource type="Texture2D" uid="uid://bgpo2mv66r7ix" path="res://Sprites/icon-foot.png" id="15_k581g"]
+[ext_resource type="Texture2D" uid="uid://e4xg1osiqglv" path="res://Sprites/GoblinRunAnimations/NewGoblin/Ears/fore-ear1.png" id="15_m22pa"]
+[ext_resource type="Texture2D" uid="uid://dmvseg64i55pr" path="res://Sprites/icon-head.png" id="16_0vg8i"]
+[ext_resource type="Texture2D" uid="uid://b1okajbo8l6aj" path="res://Sprites/GoblinRunAnimations/NewGoblin/Ears/rear-ear1.png" id="16_hgile"]
+[ext_resource type="Texture2D" uid="uid://djvbefoo88six" path="res://Sprites/icon-eye.png" id="17_ilyfi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bcep"]
 size = Vector2(8, 6)
@@ -121,6 +134,61 @@ _data = {
 "TowardRun": SubResource("Animation_mb1nu")
 }
 
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_8vb5k"]
+target_nodepath = NodePath("Targets/ForeArm")
+joint_one_bone_idx = 5
+joint_one_bone2d_node = NodePath("Hips/Stomach/Chest/ForeShoulder")
+joint_two_bone_idx = 6
+joint_two_bone2d_node = NodePath("Hips/Stomach/Chest/ForeShoulder/ForeElbow")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_lexix"]
+target_nodepath = NodePath("Targets/RearARm")
+joint_one_bone_idx = 8
+joint_one_bone2d_node = NodePath("Hips/Stomach/Chest/RearShoulder")
+joint_two_bone_idx = 9
+joint_two_bone2d_node = NodePath("Hips/Stomach/Chest/RearShoulder/RearElbow")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_0t1wj"]
+target_nodepath = NodePath("Targets/ForeLeg")
+flip_bend_direction = true
+joint_one_bone_idx = 11
+joint_one_bone2d_node = NodePath("Hips/ForeThigh")
+joint_two_bone_idx = 12
+joint_two_bone2d_node = NodePath("Hips/ForeThigh/ForeKnee")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_k7gwk"]
+target_nodepath = NodePath("Targets/RearLeg")
+flip_bend_direction = true
+joint_one_bone_idx = 14
+joint_one_bone2d_node = NodePath("Hips/RearThigh")
+joint_two_bone_idx = 15
+joint_two_bone2d_node = NodePath("Hips/RearThigh/RearKnee")
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_po67m"]
+bone_index = 4
+bone2d_node = NodePath("Hips/Stomach/Chest/Head/Face")
+target_nodepath = NodePath("Targets/Look")
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_hm208"]
+target_nodepath = NodePath("Targets/HeadTilt")
+tip_nodepath = NodePath("Hips/Stomach/Chest/Head/Face")
+ccdik_data_chain_length = 1
+joint_data/0/bone_index = 3
+joint_data/0/bone2d_node = NodePath("Hips/Stomach/Chest/Head")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = false
+joint_data/0/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_jbjjv"]
+enabled = true
+modification_count = 6
+modifications/0 = SubResource("SkeletonModification2DTwoBoneIK_8vb5k")
+modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_lexix")
+modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_0t1wj")
+modifications/3 = SubResource("SkeletonModification2DTwoBoneIK_k7gwk")
+modifications/4 = SubResource("SkeletonModification2DLookAt_po67m")
+modifications/5 = SubResource("SkeletonModification2DCCDIK_hm208")
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(216, 96)
 script = ExtResource("1_0n62b")
@@ -180,6 +248,7 @@ skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(160.783, 143.476, 166.508, 102.254, 161.164, 67.1397, 143.607, 40.0405, 141.317, -0.79924, 168.416, 4.1626, 186.737, 25.9183, 198.951, 71.7198, 202.768, 115.613, 191.317, 156.453, 184.447, 88.8954, 159.638, 27.8267)
 uv = PackedVector2Array(160.783, 143.476, 166.508, 102.254, 161.164, 67.1397, 143.607, 40.0405, 141.317, -0.79924, 168.416, 4.1626, 186.737, 25.9183, 198.951, 71.7198, 202.768, 115.613, 191.317, 156.453, 184.447, 88.8954, 159.638, 27.8267)
 polygons = [PackedInt32Array(2, 11, 3), PackedInt32Array(11, 6, 5), PackedInt32Array(1, 10, 2), PackedInt32Array(10, 7, 8), PackedInt32Array(2, 7, 10), PackedInt32Array(4, 5, 11, 3), PackedInt32Array(6, 7, 2, 11), PackedInt32Array(1, 10, 8, 9, 0)]
+bones = ["Hips", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest", PackedFloat32Array(0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/Head/Face", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/ForeShoulder", PackedFloat32Array(0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.5, 0.25), "Hips/Stomach/Chest/ForeShoulder/ForeElbow", PackedFloat32Array(1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0.5, 0), "Hips/Stomach/Chest/ForeShoulder/ForeElbow/ForeWrist", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder/RearElbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder/RearElbow/RearWrist", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh/ForeKnee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh/ForeKnee/ForeAnkle", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh/RearKnee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh/RearKnee/RearAnkle", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 2
 
 [node name="CutoffBody" type="Polygon2D" parent="Node2D/Node2D"]
@@ -199,6 +268,18 @@ skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(29.1034, -5.4023, 11.9279, 12.9183, 4.67595, 40.7809, 8.11107, 72.0786, 6.20267, 91.5443, -6.77443, 152.995, 21.8515, 161.392, 34.4469, 97.2695, 35.592, 82.0023, 33.6836, 64.8267, 34.4469, 43.8343, 44.3706, 33.529, 43.2256, -3.87558, 24.5233, 25.5137, 22.9966, 84.674)
 uv = PackedVector2Array(29.1034, -5.4023, 11.9279, 12.9183, 4.67595, 40.7809, 8.11107, 72.0786, 6.20267, 91.5443, -6.77443, 152.995, 21.8515, 161.392, 34.4469, 97.2695, 35.592, 82.0023, 33.6836, 64.8267, 34.4469, 43.8343, 44.3706, 33.529, 43.2256, -3.87558, 24.5233, 25.5137, 22.9966, 84.674)
 polygons = [PackedInt32Array(1, 13, 0), PackedInt32Array(13, 0, 12, 11), PackedInt32Array(13, 10, 11), PackedInt32Array(3, 14, 4), PackedInt32Array(9, 14, 8), PackedInt32Array(8, 7, 14), PackedInt32Array(10, 9, 14, 3, 2, 1, 13), PackedInt32Array(7, 14, 4, 5, 6)]
+bones = ["Hips", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0), "Hips/Stomach/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/Head/Face", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/ForeShoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/ForeShoulder/ForeElbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/ForeShoulder/ForeElbow/ForeWrist", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder", PackedFloat32Array(0, 1, 1, 1, 0, 0, 0, 0, 0.5, 1, 1, 0, 0, 1, 0.5), "Hips/Stomach/Chest/RearShoulder/RearElbow", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 0.5, 0, 0, 0, 0, 0, 0.5), "Hips/Stomach/Chest/RearShoulder/RearElbow/RearWrist", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh/ForeKnee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh/ForeKnee/ForeAnkle", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh/RearKnee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh/RearKnee/RearAnkle", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 2
+
+[node name="experiment" type="Polygon2D" parent="Node2D/Node2D"]
+visible = false
+position = Vector2(-135, -174)
+texture = ExtResource("5_0a3sf")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(150.017, -7.63908, 135.731, 13.7895, 150.017, 60.8483, 157.58, 60.8483, 171.026, 90.2601, 158.841, 160.428, 190.353, 168.831, 197.916, 86.8987, 188.673, 30.176, 186.152, 90.2601, 159.261, 30.5962)
+uv = PackedVector2Array(150.017, -7.63908, 135.731, 13.7895, 150.017, 60.8483, 157.58, 60.8483, 171.026, 90.2601, 158.841, 160.428, 190.353, 168.831, 197.916, 86.8987, 188.673, 30.176, 186.152, 90.2601, 159.261, 30.5962)
+polygons = [PackedInt32Array(0, 10, 1), PackedInt32Array(8, 10, 0), PackedInt32Array(2, 10, 1), PackedInt32Array(2, 3, 10), PackedInt32Array(3, 8, 10), PackedInt32Array(3, 4, 9), PackedInt32Array(8, 3, 9), PackedInt32Array(8, 7, 9), PackedInt32Array(7, 6, 5, 4, 9)]
+bones = ["Hips", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest", PackedFloat32Array(1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1), "Hips/Stomach/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/Head/Face", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/ForeShoulder", PackedFloat32Array(0, 0, 0.18, 1, 0.41, 0, 0, 0.41, 1, 0.41, 0), "Hips/Stomach/Chest/ForeShoulder/ForeElbow", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0), "Hips/Stomach/Chest/ForeShoulder/ForeElbow/ForeWrist", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder/RearElbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder/RearElbow/RearWrist", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh/ForeKnee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh/ForeKnee/ForeAnkle", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh/RearKnee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh/RearKnee/RearAnkle", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 2
 
 [node name="BodyUnderpaint" type="Polygon2D" parent="Node2D"]
@@ -216,9 +297,11 @@ uv = PackedVector2Array(27.0476, 60.1962, 11.7698, 71.6545, 4.4781, 87.6267, 3.0
 bones = ["Hips", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest", PackedFloat32Array(1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0), "Hips/Stomach/Chest/Head", PackedFloat32Array(0.3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.3, 1, 1, 1, 1), "Hips/Stomach/Chest/Head/Face", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/ForeShoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.63, 0.63, 0, 0, 0, 0, 0.63, 1, 0.63, 0.78, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/ForeShoulder/ForeUpperArm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.63, 1, 1, 1, 1, 0.63, 0.63, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/ForeShoulder/ForeUpperArm/ForeLowerArm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder", PackedFloat32Array(0, 0.39, 1, 1, 1, 0.44, 0.44, 0, 0, 0, 0, 0, 0.39, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder/RearUpperArm", PackedFloat32Array(0, 0, 1, 1, 1, 1, 0.41, 1, 1, 1, 1, 1, 0.41, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder/RearUpperArm/RearLowerArm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.41, 1, 1, 1, 1, 0.41, 0.41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0.37, 0, 0, 0, 0.37, 0.37, 0.74, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh/ForeShin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.37, 1, 1, 1, 1, 0.37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh/ForeShin/ForeFoot", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0.42, 0, 0, 0, 0, 0.42, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh/RearShin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.42, 1, 1, 1, 1, 0.42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh/RearShin/RearFoot", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="Node2D"]
+rotation = -0.0163745
+modification_stack = SubResource("SkeletonModificationStack2D_jbjjv")
 
 [node name="Hips" type="Bone2D" parent="Node2D/Skeleton2D"]
-position = Vector2(6, -53)
+position = Vector2(6.86703, -52.8946)
 rotation = -1.58805
 scale = Vector2(2, 2)
 rest = Transform2D(-0.0345057, -1.9997, 1.9997, -0.0345057, 6, -53)
@@ -235,15 +318,17 @@ rest = Transform2D(0.997326, 0.0730777, -0.0730777, 0.997326, 22.5656, -3.61131)
 [node name="Head" type="Bone2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest"]
 position = Vector2(16.5407, -2.21504)
 rest = Transform2D(1, 0, 0, 1, 16.5407, -2.21504)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="Face" type="Bone2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head"]
 position = Vector2(11.3598, -0.347305)
-rotation = -1.68712
-rest = Transform2D(-0.116061, -0.993242, 0.993242, -0.116061, 11.3598, -0.347305)
+rotation = 0.0741795
+rest = Transform2D(0.99725, 0.0741115, -0.0741115, 0.99725, 11.3598, -0.347305)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="Eyes" type="Node2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face"]
-position = Vector2(2.28406, 3.6447)
-rotation = -3.08116
+position = Vector2(0.799255, 3.60513)
+rotation = -3.30042
 scale = Vector2(0.500001, 0.500001)
 
 [node name="Narrow" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Eyes"]
@@ -254,80 +339,170 @@ texture = ExtResource("5_hg8fp")
 texture = ExtResource("6_na704")
 
 [node name="Noses" type="Node2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face"]
-position = Vector2(6.26704, -95.2955)
-rotation = -3.08116
+position = Vector2(3.72797, -2.00844)
+rotation = 3.14159
 scale = Vector2(0.500001, 0.500001)
+
+[node name="Nose1" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Noses"]
+texture = ExtResource("8_8kcav")
 
 [node name="Mouthes" type="Node2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face"]
-position = Vector2(6.26704, -95.2955)
-rotation = -3.08116
+position = Vector2(0.673889, -8.9994)
+rotation = 3.14159
 scale = Vector2(0.500001, 0.500001)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Mouthes"]
+[node name="Frown" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Mouthes"]
+visible = false
+texture = ExtResource("8_45map")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Mouthes"]
+[node name="O" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Mouthes"]
+visible = false
+texture = ExtResource("9_3iktf")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Mouthes"]
+[node name="Teeth" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Mouthes"]
+visible = false
+texture = ExtResource("10_djbt1")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Mouthes"]
+[node name="TeethySmile" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Mouthes"]
+texture = ExtResource("11_bem4q")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Mouthes"]
+[node name="Tongue" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Mouthes"]
+visible = false
+texture = ExtResource("12_rye0i")
 
-[node name="Sprite2D6" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Mouthes"]
+[node name="Smile" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/Mouthes"]
+visible = false
+texture = ExtResource("13_2t1br")
+
+[node name="ForeEars" type="Node2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face"]
+position = Vector2(-16.7671, 0.561127)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="Ear1" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/ForeEars"]
+texture = ExtResource("15_m22pa")
+
+[node name="RearEars" type="Node2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face"]
+z_index = -1
+position = Vector2(11.2461, 2.96725)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="Ear1" type="Sprite2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/Head/Face/RearEars"]
+texture = ExtResource("16_hgile")
 
 [node name="ForeShoulder" type="Bone2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest"]
 position = Vector2(8.73994, 15.153)
-rotation = -0.0779949
-scale = Vector2(1, 1)
+rotation = -1.43043
+scale = Vector2(0.999953, 0.999953)
 rest = Transform2D(0.99696, -0.0779158, 0.0779158, 0.99696, 8.73994, 15.153)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForeElbow" type="Bone2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/ForeShoulder"]
 position = Vector2(-24.1775, 10.0845)
 rotation = 0.029315
 scale = Vector2(0.999999, 0.999999)
-rest = Transform2D(0.984152, 0.177324, -0.177324, 0.984152, -24.1775, 10.0845)
+rest = Transform2D(0.999569, 0.0293108, -0.0293108, 0.999569, -24.1775, 10.0845)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForeWrist" type="Bone2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/ForeShoulder/ForeElbow"]
 position = Vector2(-33.9777, -1.58632)
-rotation = -3.03094
-rest = Transform2D(-0.993884, -0.110427, 0.110427, -0.993884, -33.9777, -1.58632)
+rotation = -0.0628612
+scale = Vector2(1, 1)
+rest = Transform2D(0.998025, -0.0628198, 0.0628198, 0.998025, -33.9777, -1.58632)
 
 [node name="RearShoulder" type="Bone2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest"]
 position = Vector2(6.25784, -14.8943)
 rotation = -0.0376649
 rest = Transform2D(0.999291, -0.037656, 0.037656, 0.999291, 6.25784, -14.8943)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RearElbow" type="Bone2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/RearShoulder"]
 position = Vector2(-29.4611, -2.50855)
 rest = Transform2D(1, 0, 0, 1, -29.4611, -2.50855)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RearWrist" type="Bone2D" parent="Node2D/Skeleton2D/Hips/Stomach/Chest/RearShoulder/RearElbow"]
 position = Vector2(-26.4443, -3.45664)
-rotation = -2.93272
-rest = Transform2D(-0.978265, -0.207357, 0.207357, -0.978265, -26.4443, -3.45664)
+rotation = -0.123295
+rest = Transform2D(0.992409, -0.122982, 0.122982, 0.992409, -26.4443, -3.45664)
 
 [node name="ForeThigh" type="Bone2D" parent="Node2D/Skeleton2D/Hips"]
 position = Vector2(-14.6272, 7.24879)
 rest = Transform2D(1, 0, 0, 1, -14.6272, 7.24879)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForeKnee" type="Bone2D" parent="Node2D/Skeleton2D/Hips/ForeThigh"]
 position = Vector2(-38.4512, -3.16371)
 rest = Transform2D(1, 0, 0, 1, -38.4512, -3.16371)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForeAnkle" type="Bone2D" parent="Node2D/Skeleton2D/Hips/ForeThigh/ForeKnee"]
 position = Vector2(-37.0894, 4.86098)
-rotation = -0.0535639
-rest = Transform2D(0.998566, -0.0535383, 0.0535383, 0.998566, -37.0894, 4.86098)
+rotation = -1.59108
+rest = Transform2D(-0.0202841, -0.999794, 0.999794, -0.0202841, -37.0894, 4.86098)
 
 [node name="RearThigh" type="Bone2D" parent="Node2D/Skeleton2D/Hips"]
 position = Vector2(-9.24849, -14.6617)
 rest = Transform2D(1, 0, 0, 1, -9.24849, -14.6617)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RearKnee" type="Bone2D" parent="Node2D/Skeleton2D/Hips/RearThigh"]
 position = Vector2(-41.942, -3.72398)
 rest = Transform2D(1, 0, 0, 1, -41.942, -3.72398)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="RearAnkle" type="Bone2D" parent="Node2D/Skeleton2D/Hips/RearThigh/RearKnee"]
 position = Vector2(-36.5636, 3.36983)
-rotation = 0.188092
-rest = Transform2D(0.982363, 0.186985, -0.186985, 0.982363, -36.5636, 3.36983)
+rotation = -1.74862
+rest = Transform2D(-0.176892, -0.98423, 0.98423, -0.176892, -36.5636, 3.36983)
+
+[node name="Targets" type="Node2D" parent="Node2D/Skeleton2D"]
+
+[node name="ForeArm" type="Node2D" parent="Node2D/Skeleton2D/Targets"]
+position = Vector2(94.543, -93.4645)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Skeleton2D/Targets/ForeArm"]
+modulate = Color(1, 0.298039, 1, 0.588235)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("14_vm5s2")
+
+[node name="RearARm" type="Node2D" parent="Node2D/Skeleton2D/Targets"]
+position = Vector2(-69.2211, -48.1399)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Skeleton2D/Targets/RearARm"]
+modulate = Color(0.219608, 1, 1, 0.588235)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("14_vm5s2")
+
+[node name="ForeLeg" type="Node2D" parent="Node2D/Skeleton2D/Targets"]
+position = Vector2(36.948, 125.622)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Skeleton2D/Targets/ForeLeg"]
+modulate = Color(1, 0.298039, 1, 0.588235)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("15_k581g")
+
+[node name="RearLeg" type="Node2D" parent="Node2D/Skeleton2D/Targets"]
+position = Vector2(-27.0106, 122.574)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Skeleton2D/Targets/RearLeg"]
+modulate = Color(0.219608, 1, 1, 0.588235)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("15_k581g")
+
+[node name="HeadTilt" type="Node2D" parent="Node2D/Skeleton2D/Targets"]
+position = Vector2(0.995613, -244.016)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Skeleton2D/Targets/HeadTilt"]
+modulate = Color(0.431373, 1, 0.12549, 0.588235)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_0vg8i")
+
+[node name="Look" type="Node2D" parent="Node2D/Skeleton2D/Targets"]
+position = Vector2(-63.7817, -197.071)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Skeleton2D/Targets/Look"]
+modulate = Color(0.541176, 0.47451, 1, 0.588235)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("17_ilyfi")

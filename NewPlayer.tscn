@@ -1,10 +1,12 @@
-[gd_scene load_steps=51 format=3 uid="uid://dmio5jlnv52qw"]
+[gd_scene load_steps=53 format=3 uid="uid://dmio5jlnv52qw"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_0n62b"]
 [ext_resource type="Texture2D" uid="uid://b16i631raurt7" path="res://Tiles/Dungeon/tile_0085.png" id="2_knqko"]
 [ext_resource type="Texture2D" uid="uid://gofng2ghwn37" path="res://Sprites/GoblinRunAnimations/NewGoblin/BodyUnerpaint.png" id="3_8gxmm"]
 [ext_resource type="Texture2D" uid="uid://bm3k0obg3fana" path="res://Sprites/GoblinRunAnimations/NewGoblin/BodyOutline.png" id="4_8a60a"]
+[ext_resource type="Texture2D" uid="uid://ixus5xreumtv" path="res://Sprites/GoblinRunAnimations/NewGoblin/Feet/rearFoot.png" id="4_g005t"]
 [ext_resource type="Texture2D" uid="uid://b8wdna13puvre" path="res://Sprites/GoblinRunAnimations/NewGoblin/BodyWithCutOffArms.png" id="5_0a3sf"]
+[ext_resource type="Texture2D" uid="uid://bimgkfb8btu7d" path="res://Sprites/GoblinRunAnimations/NewGoblin/Feet/foreFoot.png" id="5_71qwb"]
 [ext_resource type="Texture2D" uid="uid://d0gau6khgmva5" path="res://Sprites/GoblinRunAnimations/NewGoblin/Eyes/eyes-narrow.png" id="5_hg8fp"]
 [ext_resource type="Texture2D" uid="uid://dii6vvvxxgctk" path="res://Sprites/GoblinRunAnimations/NewGoblin/Eyes/eyes-open.png" id="6_na704"]
 [ext_resource type="Texture2D" uid="uid://bjy2hen5o15du" path="res://Sprites/GoblinRunAnimations/NewGoblin/Noses/nose1.png" id="8_8kcav"]
@@ -282,6 +284,24 @@ polygons = [PackedInt32Array(0, 10, 1), PackedInt32Array(8, 10, 0), PackedInt32A
 bones = ["Hips", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest", PackedFloat32Array(1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1), "Hips/Stomach/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/Head/Face", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/ForeShoulder", PackedFloat32Array(0, 0, 0.18, 1, 0.41, 0, 0, 0.41, 1, 0.41, 0), "Hips/Stomach/Chest/ForeShoulder/ForeElbow", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0), "Hips/Stomach/Chest/ForeShoulder/ForeElbow/ForeWrist", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder/RearElbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder/RearElbow/RearWrist", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh/ForeKnee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh/ForeKnee/ForeAnkle", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh/RearKnee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh/RearKnee/RearAnkle", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 2
 
+[node name="RearFoot" type="Polygon2D" parent="Node2D/Node2D"]
+z_index = -2
+position = Vector2(-87, 103)
+texture = ExtResource("4_g005t")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(1.06952, 42.959, 73.9751, 40.82, 69.1622, 0.356506, 42.0677, 1.06952, 43.1373, 14.9733, 28.164, 10.1604, 1.78253, 23.7077)
+uv = PackedVector2Array(1.06952, 42.959, 73.9751, 40.82, 69.1622, 0.356506, 42.0677, 1.06952, 43.1373, 14.9733, 28.164, 10.1604, 1.78253, 23.7077)
+polygons = [PackedInt32Array(6, 0, 1, 5), PackedInt32Array(5, 1, 4), PackedInt32Array(4, 2, 1), PackedInt32Array(4, 3, 2)]
+bones = ["Hips", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/Stomach", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/Head/Face", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/ForeShoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/ForeShoulder/ForeElbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/ForeShoulder/ForeElbow/ForeWrist", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder/RearElbow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/Stomach/Chest/RearShoulder/RearElbow/RearWrist", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh/ForeKnee", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/ForeThigh/ForeKnee/ForeAnkle", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Hips/RearThigh/RearKnee", PackedFloat32Array(0, 0, 1, 1, 0.37, 0, 0), "Hips/RearThigh/RearKnee/RearAnkle", PackedFloat32Array(1, 1, 0, 0, 0.78, 1, 1)]
+
+[node name="ForeFoot" type="Polygon2D" parent="Node2D/Node2D"]
+z_index = 1
+position = Vector2(-30, 107)
+texture = ExtResource("5_71qwb")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(1.06952, 15.3298, 0.713013, 43.672, 75.9358, 41.1765, 75.0446, 2.13904, 43.8503, 2.49554, 46.3458, 15.3298, 23.7077, 9.09091)
+uv = PackedVector2Array(1.06952, 15.3298, 0.713013, 43.672, 75.9358, 41.1765, 75.0446, 2.13904, 43.8503, 2.49554, 46.3458, 15.3298, 23.7077, 9.09091)
+
 [node name="BodyUnderpaint" type="Polygon2D" parent="Node2D"]
 visible = false
 texture = ExtResource("3_8gxmm")
@@ -439,7 +459,8 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="ForeAnkle" type="Bone2D" parent="Node2D/Skeleton2D/Hips/ForeThigh/ForeKnee"]
 position = Vector2(-37.0894, 4.86098)
-rotation = -1.59108
+rotation = 0.0403733
+scale = Vector2(1, 1)
 rest = Transform2D(-0.0202841, -0.999794, 0.999794, -0.0202841, -37.0894, 4.86098)
 
 [node name="RearThigh" type="Bone2D" parent="Node2D/Skeleton2D/Hips"]
@@ -454,7 +475,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="RearAnkle" type="Bone2D" parent="Node2D/Skeleton2D/Hips/RearThigh/RearKnee"]
 position = Vector2(-36.5636, 3.36983)
-rotation = -1.74862
+rotation = -1.77554
 rest = Transform2D(-0.176892, -0.98423, 0.98423, -0.176892, -36.5636, 3.36983)
 
 [node name="Targets" type="Node2D" parent="Node2D/Skeleton2D"]

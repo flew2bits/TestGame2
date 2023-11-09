@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bimgkfb8btu7d"
-path="res://.godot/imported/foreFoot.png-ccd721f0f3b3284ea57aad0b342d03d3.ctex"
+uid="uid://36qtuepbkcc8"
+path="res://.godot/imported/RearHand-HangingUnderpaint.png-7bd6d1cfc28f2994622e3968fe9b0b01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/GoblinRunAnimations/NewGoblin/Feet/foreFoot.png"
-dest_files=["res://.godot/imported/foreFoot.png-ccd721f0f3b3284ea57aad0b342d03d3.ctex"]
+source_file="res://Sprites/Goblin3/RearHand-HangingUnderpaint.png"
+dest_files=["res://.godot/imported/RearHand-HangingUnderpaint.png-7bd6d1cfc28f2994622e3968fe9b0b01.ctex"]
 
 [params]
 

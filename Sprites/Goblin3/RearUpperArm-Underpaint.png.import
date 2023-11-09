@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ixus5xreumtv"
-path="res://.godot/imported/rearFoot.png-bdf75541d2f3ffd6ebdccf0734b95153.ctex"
+uid="uid://dkyabcimgynxx"
+path="res://.godot/imported/RearUpperArm-Underpaint.png-4f2461e308c8687661c6c78febe83f2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/GoblinRunAnimations/NewGoblin/Feet/rearFoot.png"
-dest_files=["res://.godot/imported/rearFoot.png-bdf75541d2f3ffd6ebdccf0734b95153.ctex"]
+source_file="res://Sprites/Goblin3/RearUpperArm-Underpaint.png"
+dest_files=["res://.godot/imported/RearUpperArm-Underpaint.png-4f2461e308c8687661c6c78febe83f2d.ctex"]
 
 [params]
 
